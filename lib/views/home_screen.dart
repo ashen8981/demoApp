@@ -64,26 +64,26 @@ class HomeScreen extends StatelessWidget {
                               color: AppColors.primary,
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          SizedBox(width: 12.w),
                           // Search bar
                           Expanded(
                             child: Container(
-                              height: 40,
+                              height: 40.h,
                               decoration: BoxDecoration(
                                 color: AppColors.primary.withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
+                              padding:  EdgeInsets.symmetric(
+                                horizontal: 12.w,
                               ),
                               child: Row(
-                                children: const [
+                                children: [
                                   Icon(
                                     Icons.search,
                                     color: AppColors.primary,
                                     size: 20,
                                   ),
-                                  SizedBox(width: 8),
+                                  SizedBox(width: 8.w),
                                   Expanded(
                                     child: TextField(
                                       decoration: InputDecoration(
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          SizedBox(width: 12.w),
                           // 3-dot menu icon
                           IconButton(
                             icon: const Icon(
