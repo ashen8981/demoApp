@@ -122,7 +122,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 onChanged: (val) => setState(() => _selectedCountry = val),
                 validator: (val) => val == null ? "Select a country" : null,
               ),
-
               SizedBox(height: 12.h),
               buildTextField(
                 "Password",
@@ -156,7 +155,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 onChanged:
                     (val) => setState(() => viewModel.agreed = val ?? false),
               ),
-
               if (signUpError != null)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
@@ -165,7 +163,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: TextStyle(color: AppColors.red, fontSize: 14.sp),
                   ),
                 ),
-
               SizedBox(height: 16.h),
               ElevatedButton(
                 onPressed: () async {

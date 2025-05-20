@@ -7,6 +7,7 @@ class AppColors {
   static const Color grey = Colors.grey;
   static const Color red = Colors.red;
   static const Color black12 = Colors.black12;
+  static const Color black = Colors.black;
   static const Color shadow = Colors.black45;
 
   static const LinearGradient primaryGradient = LinearGradient(

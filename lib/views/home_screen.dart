@@ -41,7 +41,17 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text(
+                        "Hi, ${viewModel.username}!",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.black,
+                        ),
+                      ),
+                      SizedBox(height: 18.h),
                       Row(
                         children: [
                           // Company icon
@@ -73,9 +83,7 @@ class HomeScreen extends StatelessWidget {
                                 color: AppColors.primary.withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              padding:  EdgeInsets.symmetric(
-                                horizontal: 12.w,
-                              ),
+                              padding: EdgeInsets.symmetric(horizontal: 12.w),
                               child: Row(
                                 children: [
                                   Icon(
@@ -108,24 +116,16 @@ class HomeScreen extends StatelessWidget {
                               Icons.more_vert,
                               color: AppColors.primary,
                             ),
-                            onPressed: () {
-                            },
+                            onPressed: () {},
                           ),
                         ],
                       ),
                       SizedBox(height: 88.h),
-                      Text(
-                        "Hi, ${viewModel.username}!",
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.primary,
+                      Center(
+                        child: Text(
+                          "Welcome to Home Screen",
+                          style: TextStyle(color: Colors.grey[700]),
                         ),
-                      ),
-                      SizedBox(height: 18.h),
-                      Text(
-                        "Welcome to Home Screen",
-                        style: TextStyle(color: Colors.grey[700]),
                       ),
                     ],
                   ),
