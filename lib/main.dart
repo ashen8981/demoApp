@@ -1,6 +1,7 @@
 import 'package:demoApp/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/auth_view_model.dart';
 import 'views/login_screen.dart';
@@ -29,7 +30,11 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'My Demo App',
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(primarySwatch: Colors.blue),
+          theme: ThemeData(
+            textTheme: GoogleFonts.robotoTextTheme(
+              Theme.of(context).textTheme,
+            ),
+          ),
           home: const SplashScreen(),
           routes: {
             '/login': (_) => const LoginScreen(),

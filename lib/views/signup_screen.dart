@@ -106,6 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 decoration: AppInputDecorations.field(
                   hintText: "Select Country",
                 ),
+                dropdownColor: AppColors.white,
                 value: _selectedCountry,
                 items:
                     viewModel.countries
