@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../core/constants/app_colors.dart';
 import '../viewmodels/home_viewmodel.dart';
@@ -33,49 +34,101 @@ class HomeScreen extends StatelessWidget {
                 if (viewModel.username == null) {
                   return const Center(child: CircularProgressIndicator());
                 }
-                return Center(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.primary.withOpacity(0.1),
-                            shape: BoxShape.circle,
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black12,
-                                blurRadius: 8,
-                                offset: Offset(0, 4),
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 14.h,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          // Company icon
+                          Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.primary.withOpacity(0.1),
+                              shape: BoxShape.circle,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black12,
+                                  blurRadius: 8,
+                                  offset: Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            padding: const EdgeInsets.all(8),
+                            child: Icon(
+                              Icons.ac_unit,
+                              size: 20.w,
+                              color: AppColors.primary,
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          // Search bar
+                          Expanded(
+                            child: Container(
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: AppColors.primary.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                            ],
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                              ),
+                              child: Row(
+                                children: const [
+                                  Icon(
+                                    Icons.search,
+                                    color: AppColors.primary,
+                                    size: 20,
+                                  ),
+                                  SizedBox(width: 8),
+                                  Expanded(
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        hintText: 'Search...',
+                                        border: InputBorder.none,
+                                        isDense: true,
+                                      ),
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
-                          padding: const EdgeInsets.all(24),
-                          child: const Icon(
-                            Icons.android,
-                            size: 100,
-                            color: AppColors.primary,
+                          const SizedBox(width: 12),
+                          // 3-dot menu icon
+                          IconButton(
+                            icon: const Icon(
+                              Icons.more_vert,
+                              color: AppColors.primary,
+                            ),
+                            onPressed: () {
+                              // Add your menu logic here
+                            },
                           ),
+                        ],
+                      ),
+                      SizedBox(height: 88.h),
+                      Text(
+                        "Hi, ${viewModel.username}!",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primary,
                         ),
-                        const SizedBox(height: 24),
-                        Text(
-                          "Hi, ${viewModel.username}!",
-                          style: Theme.of(
-                            context,
-                          ).textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          "Welcome to Home Screen",
-                          style: Theme.of(context).textTheme.titleMedium
-                              ?.copyWith(color: Colors.grey[700]),
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(height: 18.h),
+                      Text(
+                        "Welcome to Home Screen",
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                    ],
                   ),
                 );
               },
