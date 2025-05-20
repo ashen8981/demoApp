@@ -39,13 +39,7 @@ class AuthViewModel extends ChangeNotifier {
       return false;
     }
 
-    // Accept dummy credentials
-    if (loginUsername == "demoUser" && loginPassword == "Demo@1234") {
-      error = null;
-      return true;
-    }
-
-    // Accept registered user credentials loaded from storage
+    // Only allow registered user login
     if (loginUsername == registeredUsername &&
         loginPassword == registeredPassword) {
       error = null;
